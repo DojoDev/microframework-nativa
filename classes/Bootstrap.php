@@ -40,7 +40,7 @@ class Bootstrap{
 				echo '<h1>A base controlador naõ encontrado</h1>';
 				return;
 			}
-		} else {
+		}else {
 			// Controller Class Does Not Exist
 			echo '<h1>A classe Controller não existe</h1>';
 			return;
