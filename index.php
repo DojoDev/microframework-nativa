@@ -1,2 +1,8 @@
 <?php 
-echo "<h1 style='text-align:center; margin-top:25%;'>Hello World!<h1>";
+//Include Config
+
+require('config.php');
+require('classes/Bootstrap.php');
+
+$bootstrap = new Bootstrap($_GET);
+$controller = $bootstrap->createController();
