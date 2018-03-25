@@ -6,6 +6,11 @@ class UserModel extends Model{
 	$password = md5($post['password']);
 
 	if($post['submit']){
+         if($post['name'] == '' || $post['email'] == '' || $post['password'] == ''){
+          Messages::setMsg('Por favor insira os campos abaixo corretamente', 'error');
+          return;
+          }
+    //Inserindo na tabela
           $this->query('INSERT INTO users (name, email, password) VALUES(:name, :email, :password)');
           $this->bind(':name',$post['name']);
           $this->bind(':email', $post['email']);
@@ -25,16 +30,25 @@ class UserModel extends Model{
     $password = md5($post['password']);
 
 	if($post['submit']){
+
+          //Selecionando a tabela
           $this->query('SELECT * FROM users WHERE email = :email AND password = :password');
+
           $this->bind(':email', $post['email']);
           $this->bind(':password', $password);
           $this->execute();
          $row = $this->single();
 
          if($row){
-         	echo"Logado";
+         	$_SESSION['is_logged_in'] = true;
+				$_SESSION['user_data'] = array(
+					"id"	=> $row['id'],
+					"name"	=> $row['name'],
+					"email"	=> $row['email']
+					);
+				header('Location: '.ROOT_URL.'shares');
          }else{
-         	echo"Ops erro ao logar";
+         	Messages::setMsg('Usuário não encontrado','error');
          }
 	  }
 	 return;

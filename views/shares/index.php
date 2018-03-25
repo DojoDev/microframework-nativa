@@ -11,7 +11,9 @@
           </p>
   
           <div class="row">
+          <?php if(isset($_SESSION['is_logged_in'])): ?>
           <a href="<?php echo ROOT_URL?>shares/add" class="btn btn-warning">Cadastrar Link de Compartilhamento</a>
+        <?php endif; ?>
           <?php foreach ($viewmodel as $item) {?>
             <div class="col-xs-8 col-lg-9">
             <img class="img-responsive" src="<?php echo ROOT_URL.'assets/img/'.$item['image']; ?>" title="" alt=""/>
