@@ -25,14 +25,17 @@ class UserModel extends Model{
     $password = md5($post['password']);
 
 	if($post['submit']){
-          $this->query('SELECT * FROM users WHERE email = :email AND passord = :password');
+          $this->query('SELECT * FROM users WHERE email = :email AND password = :password');
           $this->bind(':email', $post['email']);
           $this->bind(':password', $password);
           $this->execute();
-          //Verify
-           if($this->lastInsertId()){
-            header('Location: '.ROOT_URL.'users/login');
-		 }
+         $row = $this->single();
+
+         if($row){
+         	echo"Logado";
+         }else{
+         	echo"Ops erro ao logar";
+         }
 	  }
 	 return;
    }

@@ -8,7 +8,7 @@
        </div>
        <div class="form-group">
          <label for="">Senha</label>
-         <input type="password" name="link" class="form-control">
+         <input type="password" name="password" class="form-control">
        </div>
        <div class="form-group">
          <input name="submit" type="submit" value="Entrar" class="btn btn-success btn-block">
