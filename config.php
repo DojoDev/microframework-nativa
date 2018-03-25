@@ -6,5 +6,5 @@ define("DB_PASS","");
 define("DB_NAME","shareboard");
 
 // Define URL
-define("ROOT_PATH", "shareboard");
+define("ROOT_PATH", "/miniframework/");
 define("ROOT_URL", "http://localhost/miniframework/");

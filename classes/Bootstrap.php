@@ -32,12 +32,12 @@ class Bootstrap{
 					return new $this->controller($this->action, $this->request);
 				} else {
 					// Method Does Not Exist
-					echo '<h1>Métodonão existe</h1>';
+					echo '<h1>Este Método não existe</h1>';
 					return;
 				}
 			} else {
 				// Base Controller Does Not Exist
-				echo '<h1>A base controlador naõ encontrado</h1>';
+				echo '<h1>A base controlador não encontrado</h1>';
 				return;
 			}
 		}else {
