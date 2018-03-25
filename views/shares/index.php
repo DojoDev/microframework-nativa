@@ -17,7 +17,7 @@
             <img class="img-responsive" src="<?php echo ROOT_URL.'assets/img/'.$item['image']; ?>" title="" alt=""/>
               <h2><?php echo $item['title']; ?></h2>
               <p><?php echo $item['body']; ?></p>
-              <p><a class="btn btn-default" href="#" role="button">Saiba Mais »</a></p>
+              <p><a class="btn btn-success" href="<?php echo $item['link']; ?>" role="button">Visitar Site »</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
             <?php  } ?> 
           </div><!--/row-->

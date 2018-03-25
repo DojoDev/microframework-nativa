@@ -12,7 +12,8 @@
           </p>
   
           <div class="row">
-          <?php foreach ($viewmodel as $item) {?>
+          <?php if($viewmodel){?>
+  <?php foreach ($viewmodel as $item) {?>
             <div class="col-xs-8 col-lg-6">
             <img class="img-responsive" src="<?php echo ROOT_URL.'assets/img/'.$item['image']; ?>" title="" alt=""/>
               <h2><?php echo $item['title']; ?></h2>
@@ -20,6 +21,11 @@
               <p><a class="btn btn-default" href="#" role="button">Saiba Mais »</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
             <?php  } ?> 
+            <?php
+            }else{
+              echo "nenhum post";
+              } ?>
+        
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 
